@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Movie IDSS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Movie IDSS</h1>
+    <div class="server">
+      <label for="apiUrl">API</label>
+      <input id="apiUrl" type="text" value="http://127.0.0.1:8000" />
+      <button id="btnHealth">Health</button>
+      <span id="healthStatus" class="badge">—</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="tabs">
+      <button class="tab active" data-tab="forecasting">Forecasting</button>
+      <button class="tab" data-tab="predictive">Predictive</button>
+      <button class="tab" data-tab="classification">Classification</button>
+      <button class="tab" data-tab="clustering">Clustering</button>
+      <button class="tab" data-tab="nlp">NLP</button>
+    </nav>
+
+    <section id="forecasting" class="panel active">
+      <div class="controls">
+        <button data-action="train" data-task="forecasting">Train</button>
+        <button data-action="evaluate" data-task="forecasting">Evaluate</button>
+        <label>Horizon <input type="number" id="f_horizon" min="1" max="60" value="6" /></label>
+        <button data-action="predict" data-task="forecasting">Predict</button>
+      </div>
+      <pre class="out" id="out_forecasting"></pre>
+      <div class="table-wrap"><table id="table_forecasting"></table></div>
+    </section>
+
+    <section id="predictive" class="panel">
+      <div class="controls">
+        <button data-action="train" data-task="predictive">Train</button>
+        <button data-action="evaluate" data-task="predictive">Evaluate</button>
+        <label>User ID <input type="number" id="p_user" min="1" value="1" /></label>
+        <label>Top N <input type="number" id="p_topn" min="1" max="50" value="10" /></label>
+        <button data-action="predict" data-task="predictive">Recommend</button>
+      </div>
+      <pre class="out" id="out_predictive"></pre>
+      <div class="table-wrap"><table id="table_predictive"></table></div>
+    </section>
+
+    <section id="classification" class="panel">
+      <div class="controls">
+        <button data-action="train" data-task="classification">Train</button>
+        <button data-action="evaluate" data-task="classification">Evaluate</button>
+        <label>User ID <input type="number" id="c_user" min="1" value="1" /></label>
+        <label>Movie IDs <input type="text" id="c_movieids" value="1,2,3,4,5" /></label>
+        <button data-action="predict" data-task="classification">Predict</button>
+      </div>
+      <pre class="out" id="out_classification"></pre>
+      <div class="table-wrap"><table id="table_classification"></table></div>
+    </section>
+
+    <section id="clustering" class="panel">
+      <div class="controls">
+        <button data-action="train" data-task="clustering">Train</button>
+        <button data-action="evaluate" data-task="clustering">Evaluate</button>
+        <label>User ID <input type="number" id="cl_user" min="1" value="1" /></label>
+        <label>Top N <input type="number" id="cl_topn" min="1" max="50" value="10" /></label>
+        <button data-action="predict" data-task="clustering">Recommend</button>
+      </div>
+      <pre class="out" id="out_clustering"></pre>
+      <div class="table-wrap"><table id="table_clustering"></table></div>
+    </section>
+
+    <section id="nlp" class="panel">
+      <div class="controls">
+        <button data-action="train" data-task="nlp">Train</button>
+        <button data-action="evaluate" data-task="nlp">Evaluate</button>
+        <label>Query <input type="text" id="n_query" value="space adventure" /></label>
+        <label>Movie ID <input type="number" id="n_movie" min="0" value="0" /></label>
+        <label>Top N <input type="number" id="n_topn" min="1" max="50" value="5" /></label>
+        <button data-action="predict" data-task="nlp">Search</button>
+      </div>
+      <pre class="out" id="out_nlp"></pre>
+      <div class="table-wrap"><table id="table_nlp"></table></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

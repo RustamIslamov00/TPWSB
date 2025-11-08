@@ -1,0 +1,18 @@
+﻿# Python cache
+__pycache__/
+*.pyc
+
+# Local env
+venv/
+
+# Large model binaries
+models/**/*.pkl
+
+# (рекомендую) run artifacts
+out/
+
+# Local files
+i.txt
+clean tool run.txt
+
+tools/

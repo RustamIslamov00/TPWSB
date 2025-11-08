@@ -1,0 +1,20 @@
+# Core
+pandas
+numpy
+scipy
+scikit-learn
+joblib
+
+# Time series / stats
+statsmodels
+
+# API
+fastapi
+uvicorn
+pydantic
+
+# UI (простая панель управления)
+streamlit
+
+# Plots
+matplotlib
