@@ -2,17 +2,31 @@
 __pycache__/
 *.pyc
 
-# Local env
+# Virtual environment
 venv/
 
-# Large model binaries
-models/**/*.pkl
+# Local env files
+.env
+.env.*
 
-# (рекомендую) run artifacts
+# Output and artifacts
 out/
+*.csv
+*.json
+*.txt
 
-# Local files
+# Models – keep folders, ignore contents
+models/**/*.*
+!models/
+!models/**/
+!models/.gitkeep
+
+# Tools (local only)
+tools/
 i.txt
+commands.txt
 clean tool run.txt
 
-tools/
+# OS junk
+.DS_Store
+Thumbs.db
